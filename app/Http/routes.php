@@ -18,3 +18,7 @@ Route::get('/', function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/huh', function() {
+    return "yep you made it here";
+});
