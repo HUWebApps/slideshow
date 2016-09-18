@@ -40,7 +40,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    HUWebApps Slideshow
+                    Tutorial
                 </a>
             </div>
 
