@@ -8,7 +8,7 @@
                 <div class="panel-heading">Welcome</div>
 
                 <div class="panel-body">
-                    Your Application's Landing Page. Yep it works.
+                    Your Application's Landing Page. Yep it works. And it's awesome
                 </div>
             </div>
         </div>

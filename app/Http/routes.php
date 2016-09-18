@@ -13,6 +13,11 @@
 
 Route::get('/', function () {
     return view('welcome');
+  //  return "what the hell are you doing?";
+});
+
+Route::get('/test/{name?}', function($name=null) {
+    return "yep you made it to test $name";
 });
 
 Route::auth();
