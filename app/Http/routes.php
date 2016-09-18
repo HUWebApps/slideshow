@@ -20,6 +20,10 @@ Route::get('/test/{name?}', function($name=null) {
     return "yep you made it to test $name";
 });
 
+Route::get('tutorial', function(){
+    return "yep, a tutorial page";
+});
+
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
