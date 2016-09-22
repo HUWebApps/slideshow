@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Storage;
+use App\Photo;
 
 class PhotoController extends Controller
 {
@@ -40,10 +41,19 @@ class PhotoController extends Controller
     public function store(Request $request)
     {
         //
+        $photo=new Photo;
+        $photo->save();
+        $hash=md5("$photo->id HUWebApps");
+        $ext=$request->file('file')->getClientOriginalExtension();
+        $filename=$hash.$ext;
         Storage::put(
-            'testfile.png',
+            $filename,
             file_get_contents($request->file('file')->getRealPath())
           );
+        $url=Storage::url($filename);
+        $photo->url=$url;
+        $photo->save();
+        return "you've added $url";
 
     }
 
