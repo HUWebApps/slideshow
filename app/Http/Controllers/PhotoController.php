@@ -45,7 +45,7 @@ class PhotoController extends Controller
         $photo->save();
         $hash=md5("$photo->id HUWebApps");
         $ext=$request->file('file')->getClientOriginalExtension();
-        $filename=$hash.$ext;
+        $filename="$hash.$ext";
         Storage::put(
             $filename,
             file_get_contents($request->file('file')->getRealPath())
