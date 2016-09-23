@@ -20,6 +20,10 @@ Route::get('/test/{name?}', function($name=null) {
     return "yep you made it to test $name";
 });
 
+Route::get('/helloworld',function(){
+    return view('helloworld');
+});
+
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
