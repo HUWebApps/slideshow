@@ -20,6 +20,10 @@ Route::get('/test/{name?}', function($name=null) {
     return "yep you made it to test $name";
 });
 
+Route::get('/TakeNSave', function(){
+  return view('TakePicture');
+});
+
 Route::get('/helloworld',function(){
     return view('helloworld');
 });

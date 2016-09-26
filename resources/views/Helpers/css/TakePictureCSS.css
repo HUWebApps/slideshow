@@ -1,0 +1,59 @@
+body{
+	overflow:hidden;
+	background-color: #841619;
+}
+
+.booth{
+    width: 1000px;
+	height: 800px;
+	background-color: #ccc;
+	margin: 0 auto;
+	
+}
+
+.booth-capture-button{
+	position: relative;
+	display:block;
+	z-index: 2;
+	height: 125px;
+	object-fit: fill;
+	width:125px;
+	top: -170px;
+	margin:0 auto;
+	color:#fff;
+	text-align: center;
+	text-decoration: none;
+}
+
+#KeepOrSend{
+	position: relative;
+	display:none;
+	z-index: 2;
+	height: 125px;
+	object-fit: fill;
+	width:125px;
+	top: -170px;
+	margin:0 auto;
+	left:-125px;
+	color:#fff;
+	text-align: center;
+	text-decoration: none;
+}
+
+#SendPic{
+
+}
+
+#DeletePic{
+}
+
+#photo{
+	position:relative;
+	display: none;
+	top:-904px;
+}
+
+#canvas{
+	display: none;
+	top:-904px;
+}
