@@ -40,7 +40,10 @@ class PhotoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //this is where I'll do the validation that it's an image file
+        $this->validate($request, [
+          'file'=>'required|mimes:jpeg,bmp,png,gif'
+          ]);
         $photo=new Photo;
         $photo->save();
         $hash=md5("$photo->id HUWebApps");
@@ -50,8 +53,13 @@ class PhotoController extends Controller
             $filename,
             file_get_contents($request->file('file')->getRealPath())
           );
+
         $url=Storage::url($filename);
+        $dims=getimagesize($request->file('file')->getRealPath());
+        $photo->dimensions="$dims[0],$dims[1]";
+        //dd($dims);
         $photo->url=$url;
+        $photo->size=$request->file('file')->getClientSize();
         $photo->save();
         return "you've added $url";
 
