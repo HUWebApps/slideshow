@@ -46,7 +46,8 @@ class PhotoController extends Controller
           ]);
         $photo=new Photo;
         $photo->save();
-        $hash=md5("$photo->id HUWebApps");
+        $salt=env('SALT', '');
+        $hash=md5("$photo->id $salt");
         $ext=$request->file('file')->getClientOriginalExtension();
         $filename="$hash.$ext";
         Storage::put(
