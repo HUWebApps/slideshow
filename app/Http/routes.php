@@ -16,6 +16,10 @@ Route::get('/', function () {
   //  return "what the hell are you doing?";
 });
 
+Route::get('vditest', function() {
+    return "vdi works!";
+});
+
 Route::get('/test/{name?}', function($name=null) {
     return "yep you made it to test $name";
 });
